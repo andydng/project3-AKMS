@@ -15,6 +15,7 @@
 <script src="scripts/hoverintent.js" type="text/javascript" charset="utf-8"></script>
 <script src="scripts/jquery.jplayer.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="scripts/organictabs.jquery.js" type="text/javascript" charset="utf-8"></script>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
 <!--[if lt IE 9]>
   <style type="text/css">
   @import url("style-ie8.css");
@@ -87,9 +88,9 @@ body {
 
 
 
-<a id="headerlink"  href="#" title="homepage"><img  id="logo" src="" alt=""/><span  id="sitename">HOMEPAGE</span><br>
+<a id="headerlink"  href="#" title="homepage"><img  id="logo" src="" alt=""/><span  id="sitename">Homepage</span><br>
 
-    <p id="headerlink">YOUR INFO, YOUR CITY</p></a>
+    <p id="headerlink">Your Info, Your City</p></a>
 <!-- END LOGO -->
 <form method="get" action="/search" id="search">
  <input name="q" type="text" size="40" placeholder="Google" />
@@ -111,42 +112,21 @@ body {
 <!-- BEGIN TILE CONTENT -->
 <section id="content-mos" class="centered clearfix">
 <!-- Tile 1 -->
-<a href="#article-1" class="NEWS" rel="section">
-    <div class="tile large live" data-stops="0,25%,50%,75%,100%" data-speed="3000" data-delay="0" data-direction="horizontal" data-stack="true">
+<a href="#article-1" class="lightbox" rel="section">
+    <div class="tile medium">
         <div class="live-front">
-        	<img class="live-img" src="images/placeholder/large_blank.png" alt="Article 1"/>
+        	<a href="http://www.accuweather.com/en/us/new-york-ny/10007/weather-forecast/349727" class="aw-widget-legal">
+<!--
+By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
+-->
+</a><div id="awcc1428601662686" class="aw-widget-current"  data-locationkey="" data-unit="f" data-language="en-us" data-useip="true" data-uid="awcc1428601662686"></div><script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
         </div>
         <div class="live-back">
         	<img class="live-img" src="images/placeholder/large_blank.png" alt="Article 1"/>
         </div>
-        <span class="tile-date redtxt"><span class="date"></span><span class="month"></span></span>
-        <span class="tile-cat red">Forecast</span>
+        <span class="tile-cat blue">Weather</span>
     </div>
 </a>
-	<!-- Lightbox Article Preview -->
-    <div class="tile-pre">
-    <article id="article-1" class="lb-article" data-lbcolor="#e61400">
-    <div class="article-img">
-        <div class="flexslider postslide">
-        <ul class="slides">
-    	<li>
-        <img class="tile-pre-img" src="images/placeholder/blog_pre_blank.png" alt="Article 1" />
-        </li>
-        <li>
-        <img class="tile-pre-img" src="images/placeholder/blog_pre_blank.png" alt="Article 1" />
-        </li>
-        </ul>
-        </div>
-    </div>
-    <div class="article-date redtxt"><span class="date"></span><span class="month">Weather</span></div>
-    <h1 class="lb-title"><a href="singleblogpost-1.html">This is the title of Article 1</a></h1>
-    <span class="postcat redtxt">Weather</span>
-    <div class="lb-excerpt">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis sollicitudin aliquet. Nullam ut sapien eros, aliquet gravida turpis. Cras nec risus magna. Morbi laoreet molestie odio sed ultrices. Maecenas eget elit orci. Etiam rhoncus urna vitae neque accumsan et vehicula dolor varius. Praesent tellus velit.</p>
-        <p><a class="exp-button" href="singleblogpost-1.html">Read More &#8594;</a></p>
-    </div>
-    </article>
-    </div>
     
 <!-- Tile 2 -->
 <a href="#article-2" class="lightbox" rel="section">
