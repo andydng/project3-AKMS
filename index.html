@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -32,7 +34,75 @@
 <![endif]-->
 <script src="scripts/javascript.js" type="text/javascript"></script>
 <script src="scripts/mediaplayer.js" type="text/javascript"></script>
+<script  type="text/javascript"> 
+  var geocoder;
+ 
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+} 
+//Get the latitude and the longitude;
+function successFunction(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    codeLatLng(lat, lng)
+}
+ 
+function errorFunction(){
+    alert("Geocoder failed");
+}
+ 
+  function initialize() {
+    geocoder = new google.maps.Geocoder();
+ 
+ 
+ 
+  }
+ 
+  function codeLatLng(lat, lng) {
+ 
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+      console.log(results)
+        if (results[1]) {
+         //formatted address
+         var displayLoc = (results[2].formatted_address);
+         var userLocation = document.createTextNode(displayLoc);
+         d = document.getElementById("d");
+         d.appendChild(userLocation);
+        // alert(displayLoc);
+        //find country name
+             for (var i=0; i<results[0].address_components.length; i++) {
+            for (var b=0;b<results[0].address_components[i].types.length;b++) {
+ 
+            //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+                if (results[0].address_components[i].types[b] == "administrative_area_level_3") {
+                    //this is the object you are looking for
+                    city= results[1].address_components[i];
+                    break;
+                }
+            }
+        }
+        
+        document.createTextNode(displayLoc);
 
+
+        //city data
+        //alert(city.short_name + " " + city.long_name)
+
+ 
+        } else {
+          document.write("No results found");
+        }
+      } else {
+        alert("Geocoder failed due to: " + status);
+      }
+    });
+  }
+
+
+
+</script> 
 
 <style>
 
@@ -71,10 +141,11 @@ body {
     }
 
 </style>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
 
 
 </head>
-<body>
+<body onload="initialize()">
 <div id="bodypat">
 <section id="container">
 <!-- BEGIN HEADER -->
@@ -89,7 +160,11 @@ body {
 
 <a id="headerlink"  href="#" title="homepage"><img  id="logo" src="" alt=""/><span  id="sitename">HOMEPAGE</span><br>
 
-    <p id="headerlink">YOUR INFO, YOUR CITY</p></a>
+    <p id="d" id="headerlink">&nbsp;</p></a>
+
+
+
+
 <!-- END LOGO -->
 <form method="get" action="/search" id="search">
  <input name="q" type="text" size="40" placeholder="Google" />
@@ -111,8 +186,9 @@ body {
 <!-- BEGIN TILE CONTENT -->
 <section id="content-mos" class="centered clearfix">
 <!-- Tile 1 -->
-<a href="#article-1" class="NEWS" rel="section">
+<a href="#article-1" class="Weather" rel="section">
     <div class="tile large live" data-stops="0,25%,50%,75%,100%" data-speed="3000" data-delay="0" data-direction="horizontal" data-stack="true">
+
         <div class="live-front">
         	<img class="live-img" src="images/placeholder/large_blank.png" alt="Article 1"/>
         </div>
@@ -125,7 +201,8 @@ body {
 </a>
 	<!-- Lightbox Article Preview -->
     <div class="tile-pre">
-    <article id="article-1" class="lb-article" data-lbcolor="#e61400">
+    <a
+    rticle id="article-1" class="lb-article" data-lbcolor="#e61400">
     <div class="article-img">
         <div class="flexslider postslide">
         <ul class="slides">
@@ -148,41 +225,32 @@ body {
     </article>
     </div>
     
-<!-- Tile 2 -->
+<!-- Tile 2 NEWS by Sabrina-->
 <a href="#article-2" class="lightbox" rel="section">
     <div class="tile medium live" data-stops="0,75%,100%" data-speed="750" data-delay="1500">
     	<div class="live-front">
-        	<img class="live-img" src="images/placeholder/medium_blank.png" alt="Article 2" />
+        	<img class="live-img" src="images/placeholder/medium_blank2.png" alt="Article 2" />
         </div>
         <div class="live-back">
-        	<img class="live-img" src="images/placeholder/medium_blank.png" alt="Article 2" />
+        	<script type="text/javascript" src="http://output55.rssinclude.com/output?type=js&amp;id=983884&amp;hash=2e428d75683f7a0687df335a581bf105"></script>
+
+
         </div>
         <span class="tile-date limetxt"><span class="date"></span><span class="month"></span></span>
-        <span class="tile-cat lime">Traffic</span>
+        <span class="tile-cat lime">NEWS</span>
     </div>
 </a>
 	<!-- Lightbox Article Preview -->
     <div class="tile-pre">
     <article id="article-2" class="lb-article" data-lbcolor="#8cbe29">
-    <div class="article-img">
-    	<div class="flexslider postslide">
-        <ul class="slides">
-        <li>
-    	<img class="tile-pre-img" src="images/placeholder/blog_pre_blank.png" alt="Article Two" />
-        </li>
-        <li>
-    	<img class="tile-pre-img" src="images/placeholder/blog_pre_blank.png" alt="Article Two" />
-        </li>
-        </ul>
-        </div>
-    </div>
-    <div class="article-date limetxt"><span class="date">06</span><span class="month">July</span></div>
-    <h1 class="lb-title"><a href="singleblogpost-1.html">This is the title of Article Two</a></h1>
-    <span class="postcat limetxt">Cartoon Design</span>
-    <div class="lb-excerpt">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis sollicitudin aliquet. Nullam ut sapien eros, aliquet gravida turpis. Cras nec risus magna. Morbi laoreet molestie odio sed ultrices. Maecenas eget elit orci. Etiam rhoncus urna vitae neque accumsan et vehicula dolor varius. Praesent tellus velit.</p>
-        <p><a class="exp-button" href="singleblogpost-1.html">Read More &#8594;</a></p>
-    </div>
+
+    <h1 class="lb-title"><a href="singleblogpost-1.html">TOP NEWS</a></h1>
+    
+   
+      <script type="text/javascript" src="http://output98.rssinclude.com/output?type=js&amp;id=983909&amp;hash=a9df4b53948e12b499a5257a688d6749"></script>
+
+
+    
     </article>
     </div>
 
@@ -236,10 +304,31 @@ body {
 <!-- Tile 9 -->
     <div class="tile small live exclude" data-stops="0,100%" data-speed="1000" data-delay="1500">
     	<div class="live-front red">
-        <span class="tile-text">Solid Color</span>
+           
+       <center> <span class="tile-text"><div id="footer-social">
+<!--<a href="#"><span class="behance-mini"></span></a>-->
+ <h6>QUICK LINKS</h6>
+<a href="http://twitter.com"><span class="twitter-mini"></span></a>
+<a href="http://facebook.com"><span class="facebook-mini"></span></a>
+<!--<a href="#"><span class="linkedin-mini"></span></a>-->
+<a href="http://pinterest.com"><span class="pinterest-mini"></span></a>
+<!--<a href="#"><span class="dribbble-mini"></span></a>-->
+</div><!-- end #footer-social -->
+</span></center>
         </div>
         <div class="live-back green">
-        <span class="tile-text">No Hover Effect</span>
+           
+       <cemter> <span class="tile-text"><div id="footer-social">
+<!--<a href="#"><span class="behance-mini"></span></a>-->
+  <h6>SOCIAL MEDIA</h6>
+<a href="http://twitter.com"><span class="twitter-mini"></span></a>
+<a href="http://facebook.com"><span class="facebook-mini"></span></a>
+<!--<a href="#"><span class="linkedin-mini"></span></a>-->
+<a href="http://pinterest.com"><span class="pinterest-mini"></span></a>
+
+<!--<a href="#"><span class="dribbble-mini"></span></a>-->
+</div><!-- end #footer-social -->
+</span></center>
         </div>
     </div>
     
@@ -280,7 +369,7 @@ body {
     <div class="tile medium">
         	<img class="live-img" src="images/placeholder/medium_blank.png" alt="Article 3" />
         <span class="tile-date tealtxt"><span class="date"></span><span class="month"></span></span>
-        <span class="tile-cat teal">Maps</span>
+        <span class="tile-cat teal">Traffic</span>
     </div>
 </a>
 	<!-- Lightbox Article Preview -->
@@ -416,14 +505,6 @@ body {
 <!-- BEGIN FOOTER -->
 <footer class="clearfix">
 
-<div id="footer-social">
-<a href="#"><span class="behance-mini"></span></a>
-<a href="#"><span class="twitter-mini"></span></a>
-<a href="#"><span class="facebook-mini"></span></a>
-<a href="#"><span class="linkedin-mini"></span></a>
-<a href="#"><span class="pinterest-mini"></span></a>
-<a href="#"><span class="dribbble-mini"></span></a>
-</div><!-- end #footer-social -->
 
 <small>Copyright &#169; 2012 Matrix</small>
 </footer>
