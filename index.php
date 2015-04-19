@@ -139,7 +139,12 @@ body {
     }
 
 #bodypat {
-  background: url(<?php echo $bing; ?>);
+  /*background: url(<?php echo $bing; ?>);*/
+  background: -webkit-linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* W3C */
   width: 100%;
   height: 100%;
 }
@@ -163,7 +168,7 @@ body {
 
 
 
-<a id="headerlink"  href="#" title="homepage"><img  id="logo" src="" alt=""/><span  id="sitename">Homepage</span><br>
+<a id="headerlink"  href="#" title="homepage"><img  id="logo" src="images/logo.png" alt="homepage"/><br>
 
 
     <p id="headerlink">Your Info, Your City</p></a>
@@ -227,9 +232,9 @@ body {
     
 <!-- Tile 2 NEWS by Sabrina-->
 <a href="#article-2" class="lightbox" rel="section">
-    <div class="tile medium live" data-stops="0,100%" data-speed="750" data-delay="1500">
+    <div class="tile large live" data-stops="0,100%" data-speed="750" data-delay="1500">
     	<div class="live-front">
-        	<img class="live-img" src="images/news.jpg" alt="News" />
+        	<img class="live-img" src="images/news.png" alt="News" />
         </div>
         <div class="live-back">
         	<script type="text/javascript" src="http://output55.rssinclude.com/output?type=js&amp;id=983884&amp;hash=2e428d75683f7a0687df335a581bf105"></script>
@@ -254,13 +259,13 @@ body {
     </article>
     </div>
 
-<!-- Tile 4 -->
+<!-- Tile 4 - ->
 <a href="#portfolio-2" class="lightbox" rel="section">
     <div class="tile small">
     <img class="live-img" src="images/placeholder/small_blank.png" alt="Project Two"/>
     </div>
 </a>
-    <!-- Lightbox Article Preview -->
+    <!-- Lightbox Article Preview - ->
     <div class="tile-pre">
     <article id="portfolio-2" class="lb-portfolio" data-lbcolor="#00aaad">
     <div class="portfolio-img">
@@ -276,9 +281,9 @@ body {
     </div>
     </article>
     </div>
+-->
 
-
-<!-- Tile 6 -->
+<!-- Tile 6 - ->
 <a href="#quotation-1" class="lightbox" rel="section">
     <div class="tile small live" data-mode="flip" data-stops="100%" data-speed="750" data-delay="4000">
     	<div class="live-front">
@@ -289,7 +294,7 @@ body {
         </div>
     </div>
 </a>
-    <!-- Lightbox Article Preview -->
+    <!-- Lightbox Article Preview - ->
     <div class="tile-pre">
     <article id="quotation-1" class="lb-article">
     <div class="lb-quote">
@@ -298,41 +303,42 @@ body {
     </div>
     </article>
     </div>
+-->
 
 
-
-<!-- Tile 9 -->
+<!-- Tile 9 - ->
     <div class="tile small live exclude" data-stops="0,100%" data-speed="1000" data-delay="1500">
     	<div class="live-front red">
            
        <center> <span class="tile-text"><div id="footer-social">
-<!--<a href="#"><span class="behance-mini"></span></a>-->
+<!--<a href="#"><span class="behance-mini"></span></a>- ->
  <h6>QUICK LINKS</h6>
 <a href="http://twitter.com"><span class="twitter-mini"></span></a>
 <a href="http://facebook.com"><span class="facebook-mini"></span></a>
-<!--<a href="#"><span class="linkedin-mini"></span></a>-->
+<!--<a href="#"><span class="linkedin-mini"></span></a>-v->
 <a href="http://pinterest.com"><span class="pinterest-mini"></span></a>
-<!--<a href="#"><span class="dribbble-mini"></span></a>-->
-</div><!-- end #footer-social -->
+<!--<a href="#"><span class="dribbble-mini"></span></a>- ->
+</div><!-- end #footer-social - ->
 </span></center>
         </div>
         <div class="live-back green">
            
        <cemter> <span class="tile-text"><div id="footer-social">
-<!--<a href="#"><span class="behance-mini"></span></a>-->
+<!--<a href="#"><span class="behance-mini"></span></a>- ->
   <h6>SOCIAL MEDIA</h6>
 <a href="http://twitter.com"><span class="twitter-mini"></span></a>
 <a href="http://facebook.com"><span class="facebook-mini"></span></a>
-<!--<a href="#"><span class="linkedin-mini"></span></a>-->
+<!--<a href="#"><span class="linkedin-mini"></span></a>- ->
 <a href="http://pinterest.com"><span class="pinterest-mini"></span></a>
 
-<!--<a href="#"><span class="dribbble-mini"></span></a>-->
-</div><!-- end #footer-social -->
+<!--<a href="#"><span class="dribbble-mini"></span></a>- ->
+</div><!-- end #footer-social - ->
 </span></center>
         </div>
     </div>
-    
-<!-- Tile 10 -->
+-->
+
+<!-- Tile 10 - ->
 <a href="#video-1" class="lightbox" rel="section">
     <div class="tile small live" data-mode="flip" data-stops="100%" data-speed="750" data-delay="3000">
     	<div class="live-front">
@@ -343,7 +349,7 @@ body {
         </div>
     </div>
 </a>
-    <!-- Lightbox Article Preview -->
+    <!-- Lightbox Article Preview - ->
     <div class="tile-pre"> 
     <article id="video-1" class="lb-article" data-lbcolor="#19a2de">  
     <div class="lb-video"> 
@@ -351,7 +357,7 @@ body {
     </div>
     </article>
     </div>
-    
+-->    
 
     
 <!-- Tile 12 -->
@@ -390,7 +396,7 @@ body {
     
 
      
-<!-- Tile 15 -->
+<!-- Tile 15 - ->
 <a href="http://validator.w3.org/check?uri=referer">
     <div class="tile small live" data-stack="true" data-stops="0,100%" data-speed="750" data-delay="2500">
     	<div class="live-front mango">
@@ -401,14 +407,15 @@ body {
         </div>
     </div>
 </a>
+-->
 
-<!-- Tile 16 -->
+<!-- Tile 16 - ->
 <a href="#portfolio-8" class="lightbox" rel="section">
     <div class="tile small">
     <img class="live-img" src="images/placeholder/small_blank.png" alt="Project Seven"/>
     </div>
 </a>
-	<!-- Lightbox Article Preview -->
+	<!-- Lightbox Article Preview - ->
     <div class="tile-pre">
     <article id="portfolio-8" class="lb-portfolio" data-lbcolor="#00aaad">
     <div class="portfolio-img">
@@ -424,6 +431,7 @@ body {
     </div>
     </article>
     </div>
+-->
     
 <!-- END TILE CONTENT -->
 </section><!-- end #content-mos -->
