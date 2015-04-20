@@ -160,6 +160,11 @@ body {
 <section id="container">
 <!-- BEGIN HEADER -->
 
+<form action="" class="form-login"  method="post" /> 
+<input name="email" type="email" id="email" required="" placeholder="Name" />
+<input name="password" type="password" id="password" required="" placeholder="Password" />
+<button onclick="store()" type="button">Sign In</button>
+</form>
 
 
 
@@ -171,7 +176,21 @@ body {
 <a id="headerlink"  href="#" title="homepage"><img  id="logo" src="images/logo.png" alt="homepage"/><br>
 
 
-    <p id="headerlink">Your Info, Your City</p></a>
+<p><span id="results"></span></p>
+
+<script  type="text/javascript">
+  function store(){
+     var inputEmail= document.getElementById("email");
+     localStorage.setItem("email", inputEmail.value);
+     document.getElementById('results').innerHTML = "Hello " + inputEmail.value+"!";
+
+     
+     var inputPassword= document.getElementById("password");
+     localStorage.setItem("password", inputPasword.value);
+
+     
+    }
+</script>
 
 <!-- END LOGO -->
 <form method="get" action="/search" id="search">
@@ -514,7 +533,7 @@ body {
 <footer class="clearfix">
 
 
-<small>Copyright &#169; 2012 Matrix</small>
+<small>Copyright &#169; 2015 - Mild Commitment</small>
 </footer>
 <!-- END FOOTER -->
 
