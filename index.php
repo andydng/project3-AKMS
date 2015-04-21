@@ -1,4 +1,3 @@
-<?php include 'php/bg.php' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -193,8 +192,8 @@ body {
 </script>
 
 <!-- END LOGO -->
-<form method="get" action="/search" id="search">
- <input name="q" type="text" size="40" placeholder="Google" />
+<form method="get" action="https://www.google.com/search" id="search">
+<input name="q" type="text" size="40" placeholder="Google" />
 </form>
 <!-- BEGIN NAVIGATION -->
 
