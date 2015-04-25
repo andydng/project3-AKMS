@@ -137,17 +137,10 @@ body {
     width: 90%;
     }
 
-#bodypat {
-  /*background: url(<?php echo $bing; ?>);*/
-  background: -webkit-linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #ddd6f3 10%, #faaca8 90%); /* W3C */
-  width: 100%;
-  height: 100%;
-}
+
 </style>
+
+<link id="pagestyle" rel="stylesheet" type="text/css" href="style1.css">
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
 
@@ -190,6 +183,16 @@ body {
      
     }
 </script>
+
+<script>
+function swapStyleSheet(sheet){
+    document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+</script>
+
+<button onclick="swapStyleSheet('style1.css')">Dark Style Sheet</button>
+<button onclick="swapStyleSheet('style2.css')">Blue Style Sheet</button>
+<button onclick="swapStyleSheet('style3.css')">Default Style Sheet</button>
 
 <!-- END LOGO -->
 <form method="get" action="https://www.google.com/search" id="search">
