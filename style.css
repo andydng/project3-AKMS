@@ -3566,3 +3566,28 @@ Theme Preview Demo Only
 	font-size: 1.5em;
 }
 
+button {
+	font-family: 'Josefin Sans', sans-serif;
+	padding:10px;
+	font-size:1em;
+	margin:10px;
+	background: #fff;
+	border-radius:10px;
+	opacity:0.5;
+}
+
+button:hover{
+	opacity:0.8;
+}
+
+.toggle-button{
+	font-family: 'Josefin Sans', sans-serif;
+	padding:10px;
+	font-size:1em;
+	margin:10px;
+	opacity:0.5;
+}
+
+.toggle-button:hover{
+	opacity:0.8;
+}

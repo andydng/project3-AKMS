@@ -152,6 +152,16 @@ body {
 <section id="container">
 <!-- BEGIN HEADER -->
 
+<script>
+function swapStyleSheet(sheet){
+    document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+</script>
+
+<button onclick="swapStyleSheet('style1.css')">Morning</button>
+<button onclick="swapStyleSheet('style2.css')">Evening</button>
+<button onclick="swapStyleSheet('style3.css')">Summer</button>
+
 <form action="" class="form-login"  method="post" /> 
 <input name="email" type="email" id="email" required="" placeholder="Name" />
 <input name="password" type="password" id="password" required="" placeholder="Password" />
@@ -184,15 +194,7 @@ body {
     }
 </script>
 
-<script>
-function swapStyleSheet(sheet){
-    document.getElementById('pagestyle').setAttribute('href', sheet);
-}
-</script>
 
-<button onclick="swapStyleSheet('style1.css')">Dark Style Sheet</button>
-<button onclick="swapStyleSheet('style2.css')">Blue Style Sheet</button>
-<button onclick="swapStyleSheet('style3.css')">Default Style Sheet</button>
 
 <!-- END LOGO -->
 <form method="get" action="https://www.google.com/search" id="search">
