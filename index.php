@@ -162,12 +162,13 @@ function swapStyleSheet(sheet){
 <button onclick="swapStyleSheet('style2.css')">Evening</button>
 <button onclick="swapStyleSheet('style3.css')">Summer</button>
 
-<form action="" class="form-login"  method="post" /> 
-<input name="email" type="email" id="email" required="" placeholder="Name" />
-<input name="password" type="password" id="password" required="" placeholder="Password" />
-<button onclick="store()" type="button">Sign In</button>
+<br />
+<form>
+<input id="user" >
+</input>
+<button id="save">Save Name</button>
 </form>
-
+<!--<button id="save">Clear</button>-->
 
 
 <header class="clearfix">
@@ -178,21 +179,42 @@ function swapStyleSheet(sheet){
 <a id="headerlink"  href="#" title="homepage"><img  id="logo" src="images/logo.png" alt="homepage"/><br>
 
 
+
+
 <p><span id="results"></span></p>
 
-<script  type="text/javascript">
-  function store(){
-     var inputEmail= document.getElementById("email");
-     localStorage.setItem("email", inputEmail.value);
-     document.getElementById('results').innerHTML = "Hello " + inputEmail.value+"!";
+<script type="text/javascript">
 
-     
-     var inputPassword= document.getElementById("password");
-     localStorage.setItem("password", inputPasword.value);
+//check if "user" is in localStorage
 
-     
-    }
+if (localStorage["user"])
+{
+    var user = localStorage["user"] ;
+    document.getElementById("user").value = user ;
+    document.getElementById('results').innerHTML = "Hello " + user;
+}
+else
+{
+    document.getElementById("user").placeholder = "Your name" ;
+    console.log("user not found in localStorage")
+}
+
+//save entered gmail address
+document.getElementById("save").addEventListener("click", function ()
+    {
+        var user = document.getElementById("user").value ;
+        //localStorage["user"] = user ;
+        localStorage.setItem("user", user) ;
+        console.log("name saved") ;
+        document.getElementById('results').innerHTML = "Hello " + user;
+
+    } , false);
+
+
+
 </script>
+
+
 
 
 
@@ -255,7 +277,7 @@ function swapStyleSheet(sheet){
     
 <!-- Tile 2 NEWS by Sabrina-->
 <a href="#article-2" class="lightbox" rel="section">
-    <div class="tile large live" data-stops="0,100%" data-speed="750" data-delay="1500">
+    <div class="tile large live" data-stops="0,100%" data-speed="1500" data-delay="3000">
     	<div class="live-front">
         	<img class="live-img" src="images/news.png" alt="News" />
         </div>
